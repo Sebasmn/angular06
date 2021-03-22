@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="articulos" *ngFor="let item of articulos">
+        <h4>Nombre: <a [routerLink]="['/articulodetalle', item.nombre, item.precio, item.stock, item.precioMayorista]">{{item.nombre}}</a></h4>
+        <p>Descripción:  {{item.descripcion}}</p>
+        <h5>Precio:  {{item.precio}}</h5>
+        <h5>Stock:  {{item.stock}}</h5>
+        <h5>Precio Mayorista:  {{item.precioMayorista}}</h5>
+        <!--Cambiar codigo aqui-->
+    </div>
+</div>
