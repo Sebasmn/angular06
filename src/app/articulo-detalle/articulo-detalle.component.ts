@@ -12,7 +12,6 @@ export class ArticuloDetalleComponent implements OnInit {
   precio?:number;
   stock?:number;
   precioMayorista?:number;
-
   articulo!:Articulo;
   // pasar un parametro utilizando: inyeccion de dependencias
 
@@ -30,7 +29,10 @@ export class ArticuloDetalleComponent implements OnInit {
     //console.log(this.ruta.snapshot.paramMap.get('nombre'));
     //aqui tambien cambiar
     //this.articulo.nombre = this.ruta.snapshot.paramMap.get('nombre');
-    
+
+    this.ruta.queryParams.subscribe(params => {
+      this.articulo = JSON.parse(params['obj']);
+   });
   }
 
 }
